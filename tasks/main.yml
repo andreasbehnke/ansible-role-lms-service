@@ -2,11 +2,13 @@
 
   - name: install requirements
     become: yes
-    apt: name="libio-socket-ssl-perl"
+    apt: 
+      name: "libio-socket-ssl-perl"
 
   - name: install logitech media service
     become: yes
-    apt: deb="{{ lookup('url', '{{ logitech_media_service_download_url }}') }}"
+    apt: 
+      deb: "{{ lookup('url', '{{ logitech_media_service_download_url }}') }}"
 
   - name: add squeezeboxserver user to group for read/write access to share
     become: yes
