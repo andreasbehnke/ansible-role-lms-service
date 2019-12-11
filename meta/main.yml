@@ -1,0 +1,18 @@
+---
+
+dependencies: []
+
+galaxy_info:
+  author: ab@andreasbehnke.com
+  description:
+  license: GNU Public license V3
+  min_ansible_version: 2.3
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+    - system
