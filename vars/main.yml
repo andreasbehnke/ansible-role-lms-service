@@ -1,3 +1,2 @@
 ---
-
-  logitech_media_service_download_url: "http://www.mysqueezebox.com/update/?version=7.9.2&revision=1&geturl=1&os=debamd64"
+  logitech_media_service_download_url: "http://www.mysqueezebox.com/update/?version={{logitech_media_service_version}}&revision=1&geturl=1&os=debamd64"
