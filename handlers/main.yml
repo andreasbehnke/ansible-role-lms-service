@@ -3,5 +3,5 @@
   - name: restart squeezeboxserver
     become: yes
     service: 
-      name: squeezeboxserver 
+      name: logitechmediaserver
       state: restarted
