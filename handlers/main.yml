@@ -5,3 +5,9 @@
     service: 
       name: logitechmediaserver
       state: restarted
+
+  - name: restart nginx
+    become: yes
+    service: 
+      name: nginx
+      state: restarted

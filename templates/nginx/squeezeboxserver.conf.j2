@@ -1,0 +1,23 @@
+server {
+  listen 80;
+  listen [::]:80;
+
+  server_name {{ music_server_host_name }};
+
+  location / {
+      proxy_pass http://localhost:9000/material/;
+  }
+  location /material {
+      proxy_pass http://localhost:9000/material/;
+  }
+  location /imageproxy {
+      proxy_pass http://localhost:9000$request_uri;
+  }
+  location /jsonrpc.js {
+      proxy_pass http://localhost:9000$request_uri;
+  }
+  location /material/svg {
+      proxy_pass http://localhost:9000$request_uri;
+  }
+
+}

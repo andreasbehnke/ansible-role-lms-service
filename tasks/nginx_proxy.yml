@@ -1,0 +1,14 @@
+---
+
+  - name: install nginx
+    become: yes
+    apt:
+      name: "nginx"
+      state: "latest"
+
+  - name: configure http proxy
+    become: yes
+    template:
+      src: "nginx/squeezeboxserver.conf.j2"
+      dest: "/etc/nginx/conf.d/squeezeboxserver.conf"
+    notify: restart nginx
