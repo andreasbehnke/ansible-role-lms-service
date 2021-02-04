@@ -29,7 +29,10 @@ create site.yml:
   roles:
     - ansible-role-lms-service
 ```
-created folder: mkdir roles
+create folder for roles:
+```
+mkdir roles
+```
 check out the role into roles folder
 ``` 
   git clone https://github.com/andreasbehnke/ansible-role-lms-service.git
