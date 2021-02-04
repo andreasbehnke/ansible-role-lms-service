@@ -3,6 +3,10 @@ installs logitech media service for free and open source multiroom audio streami
 
 ## How to use
 
+### Installation
+
+The IP 192.168.1.217 in the following text is just an example, use correct hostname or ip.
+
 add host to hosts.yml:
 ```all:
   children:
@@ -40,3 +44,10 @@ check out the role into roles folder
 
 run playbook:
 ansible-playbook site.yml --limit 192.168.1.217
+
+### LMS Configuration
+
+* Open http://192.168.1.217:9000/settings/index.html in your browser
+* go to "plugins"
+* install additional plugin "Material Skin"
+* Open http://192.168.1.217 and use/configure LMS with modern UX
