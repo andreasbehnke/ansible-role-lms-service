@@ -27,3 +27,13 @@
       owner: squeezeboxserver
       group: "{{ music_server_group }}"
     notify: restart squeezeboxserver
+
+  # Fix for spotty issue 41, downgrade to older version
+  # https://github.com/michaelherger/Spotty-Plugin/issues/41
+  - name: downgrade spotty binary to older version as workaround for issue 41
+    become: yes
+    get_url:
+      url:  "https://github.com/michaelherger/Spotty-Plugin/raw/8927261a6f536e76c8c1cf7d37923f2b4f1f454b/Bin/i386-linux/spotty-x86_64"
+      dest: "/var/lib/squeezeboxserver/cache/InstalledPlugins/Plugins/Spotty/Bin/i386-linux/spotty-x86_64"
+      mode: "0755"
+      owner: squeezeboxserver
