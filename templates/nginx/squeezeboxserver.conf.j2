@@ -1,23 +1,31 @@
 server {
-  listen 80;
-  listen [::]:80;
+    listen 80 default_server;
+    server_name _;
+    return 301 https://$host$request_uri;
+}
 
-  server_name {{ music_server_host_name }};
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+    include snippets/snakeoil.conf;
 
-  location / {
-      proxy_pass http://localhost:9000/material/;
-  }
-  location /material {
-      proxy_pass http://localhost:9000/material/;
-  }
-  location /imageproxy {
-      proxy_pass http://localhost:9000$request_uri;
-  }
-  location /jsonrpc.js {
-      proxy_pass http://localhost:9000$request_uri;
-  }
-  location /material/svg {
-      proxy_pass http://localhost:9000$request_uri;
-  }
+    server_name {{ music_server_host_name }};
+
+    # proxy rules for material UI plugin
+    location / {
+        proxy_pass http://localhost:9000/material/;
+    }
+    location /material {
+        proxy_pass http://localhost:9000/material/;
+    }
+    location /imageproxy {
+        proxy_pass http://localhost:9000$request_uri;
+    }
+    location /jsonrpc.js {
+        proxy_pass http://localhost:9000$request_uri;
+    }
+    location /material/svg {
+        proxy_pass http://localhost:9000$request_uri;
+    }
 
 }
