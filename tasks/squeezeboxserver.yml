@@ -8,7 +8,7 @@
   - name: install logitech media service
     become: yes
     apt: 
-      deb: "{{ lookup('url', '{{ logitech_media_service_download_url }}') }}"
+      deb: "{{ logitech_media_service_download_url }}"
     notify: restart squeezeboxserver
 
   - name: add squeezeboxserver user to group for read/write access to share

@@ -1,2 +1,2 @@
 ---
-  logitech_media_service_download_url: "http://www.mysqueezebox.com/update/?version={{logitech_media_service_version}}&revision=1&geturl=1&os=debamd64"
+  logitech_media_service_download_url: "https://downloads.lms-community.org/LogitechMediaServer_v{{logitech_media_service_version}}/logitechmediaserver_{{logitech_media_service_version}}_all.deb"
