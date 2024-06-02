@@ -1,6 +1,3 @@
 ---
 
   - include_tasks: "squeezeboxserver.yml"
-
-  - include_tasks: "nginx_proxy.yml"
-    when: music_server_http_proxy
